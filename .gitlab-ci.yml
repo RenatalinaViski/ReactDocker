@@ -1,0 +1,26 @@
+stages:
+  - test
+  - build
+  - deploy
+
+
+test-linter:
+  image: alpine:3.10
+  stage: test
+  script:
+    - echo "Maxim"
+
+
+test-db:
+  image: node:10-alpine
+  stage: test
+  script:
+    - echo "db"
+
+build-image:
+  image: docker:19.03.1
+  services:
+    - docker:19.03.1-dind
+  stage: build
+  script:
+    - docker build -t my-docker-image .
