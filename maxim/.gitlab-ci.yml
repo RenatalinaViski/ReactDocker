@@ -1,0 +1,12 @@
+stages:
+  - test
+  - build
+  - deploy
+
+
+test-linter:
+  image: alpine:3.10
+  stage: test
+  script:
+    - echo "Maxim"
+
